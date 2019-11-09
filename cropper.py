@@ -24,6 +24,7 @@ def convert(path):
     plots_input = np.array(plots_input, dtype=np.float32)
     plt.close(fig)
 
+    # Align the coordinates to fix for "plot_to".
     left = np.argsort(plots_input[:, 0], axis=0)[0:2]
     top, bottom = np.argsort(plots_input[left, 1])
     topleft = plots_input[left][top]
@@ -43,16 +44,18 @@ def convert(path):
                          (w, 0)], dtype=np.float32)
     mat = cv2.getPerspectiveTransform(plots_from, plots_to)
     warped = cv2.warpPerspective(img, mat, (w, h))
+    if warped.max() <= 1:
+        warped *= 255
     warped_bgr = cv2.cvtColor(warped, cv2.COLOR_RGB2BGR)
-    save_as = f"{args.out/Path(path).stem}_cropped{Path(path).suffix}"
+    save_as = f"{args.outdir/Path(path).stem}_cropped{Path(path).suffix}"
     cv2.imwrite(str(save_as), warped_bgr)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("input")
-    parser.add_argument("--out", default=".", type=Path)
-    parser.add_argument("--width", default=1600)
-    parser.add_argument("--height", default=900)
+    parser.add_argument("--outdir", default=".", type=Path)
+    parser.add_argument("--width", default=1600, type=int)
+    parser.add_argument("--height", default=900, type=int)
     args = parser.parse_args()
     main(args)
