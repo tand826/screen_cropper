@@ -3,6 +3,7 @@ Manually crop the screen or the whiteboard or etc. from an image with GUI of mat
 
 # Example
 ![INPUT](https://raw.githubusercontent.com/tand826/screen_cropper/master/img/lena.png)
+![CROPPING](https://raw.githubusercontent.com/tand826/screen_cropper/master/img/cropping.png)
 ![OUTPUT](https://raw.githubusercontent.com/tand826/screen_cropper/master/img/lena_cropped.png)
 
 # How To Use
