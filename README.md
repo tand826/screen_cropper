@@ -2,9 +2,9 @@
 Manually crop the screen or the whiteboard or etc. from an image with GUI of matplotlib.
 
 # Example
-![INPUT](https://raw.githubusercontent.com/tand826/screen_cropper/master/img/lena.png)
-![CROPPING](https://raw.githubusercontent.com/tand826/screen_cropper/master/img/cropping.png)
-![OUTPUT](https://raw.githubusercontent.com/tand826/screen_cropper/master/img/lena_cropped.png)
+<img src="https://raw.githubusercontent.com/tand826/screen_cropper/master/img/lena.png" height=200px>
+<img src="https://raw.githubusercontent.com/tand826/screen_cropper/master/img/cropping.png" height=200px>
+<img src="https://raw.githubusercontent.com/tand826/screen_cropper/master/img/lena_cropped.png" height=200px>
 
 # How To Use
 
